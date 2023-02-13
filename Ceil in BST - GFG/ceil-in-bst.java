@@ -111,8 +111,14 @@ class Tree {
     int findCeil(Node root, int key) {
         if (root == null) return -1;
         // Code here
-        ceil(root, key);
-        return val;
+        // ceil(root, key);
+        // return val;
+        if(root == null) return -1;
+        if(root.data == key ) return root.data;
+        if(root.data < key) return findCeil(root.right, key);
+        int ceil = findCeil(root.left, key);
+        if(ceil >= key) return ceil;
+        return root.data;
     }
     void ceil(Node root, int key) {
         if(root == null ) return;
