@@ -109,19 +109,19 @@ class Tree {
     // Function to return the ceil of given number in BST.
     int val = -1;
     int findCeil(Node root, int key) {
-        // int ans = -1;
-        // while(root != null) {
-        //     if(root.data >= x) {
-        //         ans = root.data;
-        //         root = root.left;
-        //     }
-        //     else root = root.right;
-        // }
-        // return ans;
-        // Code here
-        // if (root == null) return -1;
-        ceil(root, key);
-        return val;
+        int ans = -1;
+        while(root != null) {
+            if(root.data >= key) {
+                ans = root.data;
+                root = root.left;
+            }
+            else root = root.right;
+        }
+        return ans;
+        
+        
+        // ceil(root, key);
+        // return val;
         
         // if(root == null) return -1;
         // if(root.data == key ) return root.data;
